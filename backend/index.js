@@ -1,6 +1,9 @@
 // HITO 4 BACKEND PROYECTO FINAL
 //para el backend
-require("dotenv").config();
+require("dotenv").config(); // Cargar variables de entorno
+
+console.log("DATABASE_URL:", process.env.DATABASE_URL); // Mostrar valor en consola
+
 /* para habilitar los cors */
 const cors = require("cors");
 // Importar express y se ejecuta para obtener un enrutador (app)
