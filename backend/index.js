@@ -34,7 +34,7 @@ app.listen(PORT, () => {
 });
 
 // Resto de tus rutas
-app.use("/api", rutasApi);
+app.use("/api", usersRoutes);
 
 // Manejar cualquier otra ruta con el frontend
 app.get("*", (req, res) => {
