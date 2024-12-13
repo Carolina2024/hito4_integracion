@@ -32,8 +32,7 @@ app.listen(PORT, () => {
 
 
 app.get("*", (req, res) => {
-  console.log("dirname", _dirname);
-  /* res.status(404).send("ruta no encontrada") */
+  console.log("__dirname:", __dirname); // Aquí para verificar el valor
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
