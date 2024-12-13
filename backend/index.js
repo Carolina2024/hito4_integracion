@@ -33,7 +33,10 @@ app.listen(PORT, () => {
   console.log(`Server listening on port http://localhost:${PORT}`);
 });
 
+// Resto de tus rutas
+app.use("/api", rutasApi);
 
+// Manejar cualquier otra ruta con el frontend
 app.get("*", (req, res) => {
   console.log("__dirname:", __dirname); // Aquí para verificar el valor
   res.sendFile(path.join(__dirname, "public", "index.html"));
