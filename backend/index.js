@@ -39,4 +39,8 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
+app.get("/api", (req, res) => {
+  res.json({ message: "¡Hola desde el backend!" });
+});
+
 module.exports = app; // Exportamos app para los test
