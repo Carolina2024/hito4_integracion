@@ -37,11 +37,16 @@ const FormularioUsuario = () => {
 
     try {
       // enviar registro al backend en tabla usuarios, POST
-      const response = await axios.post("http://localhost:3000/usuarios", {
-        nombre,
-        email,
-        password,
-      });
+      /* const response = await axios.post("http://localhost:3000/usuarios", { */
+      console.log("vite_base", import.meta.env.VITE_BASE_URL);
+        const response = await axios.post(
+          `${import.meta.env.VITE_BASE_URL}/usuarios`,
+          {
+            nombre,
+            email,
+            password,
+          }
+        );
 
       if (response.status === 200) {
         alert("Usuario registrado con éxito");
