@@ -20,10 +20,11 @@ const Tienda = () => {
         `${import.meta.env.VITE_BASE_URL}/publicaciones`
       );
      /*  console.log("Password:", pgpassword); */
-      setPublicaciones(response.data); // Actualiza el estado con las publicaciones obtenidas
+      setPublicaciones(response.data || []); // Actualiza el estado con las publicaciones obtenidas
       /* console.log("publicaciones: ", response.data); */
     } catch (error) {
       console.error("Error al obtener las publicaciones en Tienda:", error);
+      setPublicaciones([]); // Establece un array vacío en caso de error
     }
   };
 
