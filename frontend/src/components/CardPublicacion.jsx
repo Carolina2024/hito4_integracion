@@ -20,8 +20,6 @@ const CardPublicacion = ({
   const { usuario } = useContext(UsuarioContext);
   const [isFavorito, setIsFavorito] = useState(esFavorito);
 
-  const BASE_URL = import.meta.env.VITE_BASE_URL;
-
   //agregar al carrito
   const handleAgregarAlCarrito = async () => {
     const token = localStorage.getItem("token"); // Recuperar el token del almacenamiento local

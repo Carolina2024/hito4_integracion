@@ -10,8 +10,6 @@ const FormularioUsuario = () => {
   const [password, setPassword] = useState("");
   const [confirmar, setConfirmar] = useState("");
 
-  const BASE_URL = import.meta.env.VITE_BASE_URL;
-
   const handleGoBack = () => {
     navigate("/"); //para boton volver
   };

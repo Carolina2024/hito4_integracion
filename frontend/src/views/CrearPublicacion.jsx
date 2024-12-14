@@ -14,8 +14,6 @@ const CrearPublicacion = () => {
   const [precio, setPrecio] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false); // Nuevo estado para controlar la carga
 
-  const BASE_URL = import.meta.env.VITE_BASE_URL;
-
   const handlePublicar = async () => {
     const token = localStorage.getItem("token"); // Obtener el token desde localStorage
     if (!token) {

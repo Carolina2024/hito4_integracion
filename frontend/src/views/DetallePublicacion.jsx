@@ -14,8 +14,6 @@ const DetallePublicacion = () => {
   const [mensaje, setMensaje] = useState("");
   const [cargando, setCargando] = useState(true);
 
-  const BASE_URL = import.meta.env.VITE_BASE_URL;
-
   // Obtener el email del publicador al cargar la vista
   useEffect(() => {
     // Obtener el email del publicador desde el backend

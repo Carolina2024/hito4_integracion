@@ -11,8 +11,6 @@ const Carrito = () => {
   const navigate = useNavigate();
   const { usuario, setUsuario } = useContext(UsuarioContext);
 
-  const BASE_URL = import.meta.env.VITE_BASE_URL;
-
   useEffect(() => {
     //para obtener la boleta con sus items
     const fetchBoletaYItems = async () => {

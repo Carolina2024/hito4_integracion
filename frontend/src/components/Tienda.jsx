@@ -7,8 +7,6 @@ import OrdenarPor from "../components/OrdenarPor";
 import Buscador from "../components/Buscador";
 import axios from "axios"; // Importar axios para las solicitudes
 
-const BASE_URL = import.meta.env.VITE_BASE_URL;
-
 const Tienda = () => {
   const { publicaciones, setPublicaciones } = useContext(UsuarioContext);
   const { activeMenu, usuario } = useContext(UsuarioContext); // para traer usuario de context
