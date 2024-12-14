@@ -12,13 +12,14 @@ const app = express();
 const usersRoutes = require("./routes/usersRoutes");
 
 // Configuración de CORS para permitir solicitudes con credenciales
-const corsOptions = {
-  origin: "*", // El origen de tu frontend
-  methods: ["GET", "POST", "PUT", "DELETE"], // Métodos permitidos
+/* const corsOptions = {
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
-  exposedHeaders: ["Authorization"], // Permitir enviar cookies o encabezados de autorización
-};
-app.use(cors(corsOptions)); // se permite cors para todas las rutas
+  exposedHeaders: ["Authorization"],
+}; */
+
+/* app.use(cors(corsOptions)); */ // se permite cors para todas las rutas
 /* parsear el cuerpo de la consulta */
 app.use(express.json());
 app.use("/publicaciones", usersRoutes);
