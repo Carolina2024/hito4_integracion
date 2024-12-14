@@ -20,6 +20,8 @@ const CardPublicacion = ({
   const { usuario } = useContext(UsuarioContext);
   const [isFavorito, setIsFavorito] = useState(esFavorito);
 
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
+
   //agregar al carrito
   const handleAgregarAlCarrito = async () => {
     const token = localStorage.getItem("token"); // Recuperar el token del almacenamiento local
@@ -31,7 +33,7 @@ const CardPublicacion = ({
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BASE_URL}/boletas/agregar/${publicacion_id}`,
+        `${BASE_URL}/boletas/agregar/${publicacion_id}`,
         {}, // No es necesario enviar datos en el cuerpo
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -70,7 +72,7 @@ const CardPublicacion = ({
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BASE_URL}/api/favoritos/${publicacion_id}`,
+        `${BASE_URL}/favoritos/${publicacion_id}`,
         {},
         {
           headers: {

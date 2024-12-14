@@ -14,6 +14,8 @@ const CrearPublicacion = () => {
   const [precio, setPrecio] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false); // Nuevo estado para controlar la carga
 
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
+
   const handlePublicar = async () => {
     const token = localStorage.getItem("token"); // Obtener el token desde localStorage
     if (!token) {
@@ -35,7 +37,7 @@ const CrearPublicacion = () => {
       console.log("Enviando la solicitud a la API");
       // Hacer la solicitud POST al backend, enviando el token en los headers
       const response = await axios.post(
-        `${import.meta.env.VITE_BASE_URL}/api/publicaciones`,nuevaPublicacion,
+        `${BASE_URL}/publicaciones`,nuevaPublicacion,
         {
           headers: {
             Authorization: `Bearer ${token}`, // Enviar el token JWT en los headers

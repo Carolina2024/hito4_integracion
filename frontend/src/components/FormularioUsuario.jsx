@@ -10,6 +10,8 @@ const FormularioUsuario = () => {
   const [password, setPassword] = useState("");
   const [confirmar, setConfirmar] = useState("");
 
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
+
   const handleGoBack = () => {
     navigate("/"); //para boton volver
   };
@@ -40,7 +42,7 @@ const FormularioUsuario = () => {
       /* const response = await axios.post("http://localhost:3000/usuarios", { */
       console.log("vite_base", import.meta.env.VITE_BASE_URL);
         const response = await axios.post(
-          `${import.meta.env.VITE_BASE_URL}/api/usuarios`,
+          `${BASE_URL}/usuarios`,
           {
             nombre,
             email,

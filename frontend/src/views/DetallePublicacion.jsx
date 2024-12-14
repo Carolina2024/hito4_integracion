@@ -14,13 +14,15 @@ const DetallePublicacion = () => {
   const [mensaje, setMensaje] = useState("");
   const [cargando, setCargando] = useState(true);
 
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
+
   // Obtener el email del publicador al cargar la vista
   useEffect(() => {
     // Obtener el email del publicador desde el backend
     const obtenerEmailPublicador = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_BASE_URL}/api/usuarios/email/${nombrePublicador}`
+          `${BASE_URL}/usuarios/email/${nombrePublicador}`
         );
         setEmailPublicador(response.data.email); // Guardar el email en el estado
         setCargando(false);

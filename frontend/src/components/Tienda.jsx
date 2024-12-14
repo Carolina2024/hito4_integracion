@@ -7,6 +7,8 @@ import OrdenarPor from "../components/OrdenarPor";
 import Buscador from "../components/Buscador";
 import axios from "axios"; // Importar axios para las solicitudes
 
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
 const Tienda = () => {
   const { publicaciones, setPublicaciones } = useContext(UsuarioContext);
   const { activeMenu, usuario } = useContext(UsuarioContext); // para traer usuario de context
@@ -14,7 +16,7 @@ const Tienda = () => {
   // Función para obtener publicaciones desde el backend
   const fetchPublicaciones = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/publicaciones`);
+      const response = await axios.get(`${BASE_URL}/publicaciones`);
      /*  console.log("Password:", pgpassword); */
       setPublicaciones(response.data); // Actualiza el estado con las publicaciones obtenidas
       /* console.log("publicaciones: ", response.data); */

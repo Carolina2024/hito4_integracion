@@ -11,6 +11,8 @@ const Carrito = () => {
   const navigate = useNavigate();
   const { usuario, setUsuario } = useContext(UsuarioContext);
 
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
+
   useEffect(() => {
     //para obtener la boleta con sus items
     const fetchBoletaYItems = async () => {
@@ -23,7 +25,7 @@ const Carrito = () => {
         }
 
         const response = await fetch(
-          `${import.meta.env.VITE_BASE_URL}/api/obtenerBoletaItems`,
+          `${BASE_URL}/obtenerBoletaItems`,
           {
             method: "GET",
             headers: {
@@ -55,7 +57,7 @@ const Carrito = () => {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        `${import.meta.env.VITE_BASE_URL}/api/actualizarCantidad/${item_id}`,
+        `${BASE_URL}/actualizarCantidad/${item_id}`,
         {
           method: "PUT",
           headers: {
@@ -87,7 +89,7 @@ const Carrito = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `${import.meta.env.VITE_BASE_URL}/api/eliminarItem/${item_id}`,
+        `${BASE_URL}/eliminarItem/${item_id}`,
         {
           method: "DELETE",
           headers: {

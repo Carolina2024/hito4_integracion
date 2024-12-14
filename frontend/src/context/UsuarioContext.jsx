@@ -17,11 +17,13 @@ const UsuariosProvider = ({ children }) => {
   const [MisFavoritos, setMisFavoritos] = useState([]);
   const [sortOption, setSortOption] = useState(""); // Opción de ordenación seleccionada
 
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
+
   // Función para obtener publicaciones con orden
   const fetchPublicaciones = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_BASE_URL}/publicaciones/api/ordenar`,
+        `${BASE_URL}/publicaciones/ordenar`,
         {
           params: { sort: sortOption }, // Pasar la opción de orden como parámetro
         }
@@ -58,7 +60,7 @@ const UsuariosProvider = ({ children }) => {
   // con autorizacion de token pasa a vista perfil
   const loginWithEmailAndPassword = async (email, password) => {
     try {
-      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/login`, {
+      const response = await axios.post(`${BASE_URL}/login`, {
         email,
         password,
       });
@@ -69,7 +71,7 @@ const UsuariosProvider = ({ children }) => {
       setToken(token);
 
       //peticion GET a /usuarios en Authorization Bearer
-      const userResponse = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/usuarios`, {
+      const userResponse = await axios.get(`${BASE_URL}/usuarios`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log("Respuesta de usuario:", userResponse.data);
