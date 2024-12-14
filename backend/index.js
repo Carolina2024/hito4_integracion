@@ -48,4 +48,9 @@ app.get("/api", (req, res) => {
   res.json({ message: "¡Hola desde el backend!" });
 });
 
+app.use(express.static("public")); // Servir archivos estáticos desde 'public'
+app.get("*", (req, res) => {
+  res.sendFile(__dirname + "/public/index.html"); // Redirigir todas las rutas al frontend
+});
+
 module.exports = app; // Exportamos app para los test
