@@ -88,7 +88,7 @@ router.post("/publicaciones", authMiddleware, async (req, res) => {
 });
 
 // Ruta para obtener las publicaciones, debe ser publica, GET /publicaciones
-router.get("/publicaciones", obtenerPublicaciones);
+router.get("/api/publicaciones", obtenerPublicaciones);
 
 // Ruta para obtener el email del publicador por su nombre  ejemplo GET /usuarios/email/roroo se obtiene el email, publico
 router.get('/usuarios/email/:nombrePublicador', obtenerEmailPorNombre);
