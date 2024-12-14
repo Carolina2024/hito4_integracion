@@ -13,7 +13,7 @@ const Buscador = () => {
   const fetchAllPublicaciones = async () => {
     try {
       const response = await axios.get(
-        "https://hito4-integracion-backend.onrender.com/publicaciones/buscar"
+        "https://hito4-integracion.onrender.com/publicaciones/buscar"
       );
       setPublicaciones(response.data);
     } catch (error) {
@@ -27,7 +27,7 @@ const Buscador = () => {
         await fetchAllPublicaciones(); // Obtener todas las publicaciones si no hay término
       } else {
         const response = await axios.get(
-          "https://hito4-integracion-backend.onrender.com/publicaciones/buscar",
+          "https://hito4-integracion.onrender.com/publicaciones/buscar",
           { params: { titulo: searchTerm } }
         );
         setPublicaciones(response.data);

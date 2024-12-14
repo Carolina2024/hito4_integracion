@@ -29,7 +29,7 @@ const MisFavoritos = () => {
 
       try {
         const response = await axios.get(
-          "https://hito4-integracion-backend.onrender.com/favoritos",
+          "https://hito4-integracion.onrender.com/favoritos",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,

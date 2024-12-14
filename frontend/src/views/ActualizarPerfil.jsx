@@ -56,7 +56,7 @@ const ActualizarPerfil = () => {
     try {
       // Enviar la solicitud PUT para actualizar los datos del usuario
       const response = await axios.put(
-        "https://hito4-integracion-backend.onrender.com/usuarios", // Actualiza la URL si es necesario
+        "https://hito4-integracion.onrender.com/usuarios", // Actualiza la URL si es necesario
         updatedUserData,
         {
           headers: {

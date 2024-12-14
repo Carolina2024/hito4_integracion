@@ -22,7 +22,7 @@ const DetallePublicacion = () => {
     const obtenerEmailPublicador = async () => {
       try {
         const response = await axios.get(
-          "https://hito4-integracion-backend.onrender.com/usuarios/email/${nombrePublicador}"
+          "https://hito4-integracion.onrender.com/usuarios/email/${nombrePublicador}"
         );
         setEmailPublicador(response.data.email); // Guardar el email en el estado
         setCargando(false);

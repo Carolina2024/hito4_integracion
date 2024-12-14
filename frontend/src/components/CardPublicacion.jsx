@@ -33,7 +33,7 @@ const CardPublicacion = ({
 
     try {
       const response = await axios.post(
-        "https://hito4-integracion-backend.onrender.com/boletas/agregar/${publicacion_id}",
+        "https://hito4-integracion.onrender.com/boletas/agregar/${publicacion_id}",
         {}, // No es necesario enviar datos en el cuerpo
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -72,7 +72,7 @@ const CardPublicacion = ({
 
     try {
       const response = await axios.post(
-        "https://hito4-integracion-backend.onrender.com/favoritos/${publicacion_id}",
+        "https://hito4-integracion.onrender.com/favoritos/${publicacion_id}",
         {},
         {
           headers: {

@@ -23,7 +23,7 @@ const UsuariosProvider = ({ children }) => {
   const fetchPublicaciones = async () => {
     try {
       const response = await axios.get(
-        "https://hito4-integracion-backend.onrender.com/publicaciones/ordenar",
+        "https://hito4-integracion.onrender.com/publicaciones/ordenar",
         {
           params: { sort: sortOption }, // Pasar la opción de orden como parámetro
         }
@@ -61,7 +61,7 @@ const UsuariosProvider = ({ children }) => {
   const loginWithEmailAndPassword = async (email, password) => {
     try {
       const response = await axios.post(
-        "https://hito4-integracion-backend.onrender.com/login",
+        "https://hito4-integracion.onrender.com/login",
         {
           email,
           password,
@@ -75,7 +75,7 @@ const UsuariosProvider = ({ children }) => {
 
       //peticion GET a /usuarios en Authorization Bearer
       const userResponse = await axios.get(
-        "https://hito4-integracion-backend.onrender.com/usuarios",
+        "https://hito4-integracion.onrender.com/usuarios",
         {
           headers: { Authorization: `Bearer ${token}` },
         }

@@ -18,7 +18,7 @@ const Tienda = () => {
     try {
       const response = await axios.get(
         /*  `${import.meta.env.VITE_BASE_URL}/publicaciones` */
-        "https://hito4-integracion-backend.onrender.com/publicaciones"
+        "https://hito4-integracion.onrender.com/publicaciones"
       );
      /*  console.log("Password:", pgpassword); */
       setPublicaciones(response.data || []); // Actualiza el estado con las publicaciones obtenidas
