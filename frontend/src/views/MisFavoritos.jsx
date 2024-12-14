@@ -36,9 +36,10 @@ const MisFavoritos = () => {
             },
           }
         );
-        setMisFavoritos(response.data);
+        setMisFavoritos(response.data || []);
       } catch (error) {
         console.error("Error fetching favorites", error);
+        setMisFavoritos([]); // Establece un array vacío en caso de error
       }
     };
 

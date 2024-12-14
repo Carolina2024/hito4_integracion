@@ -35,12 +35,13 @@ const MisPublicaciones = () => {
           `${import.meta.env.VITE_BASE_URL}/publicaciones/mis-publicaciones`,
           config
         );
-        setMisPublicaciones(response.data); // Actualizar el estado con las publicaciones
+        setMisPublicaciones(response.data || []); // Actualizar el estado con las publicaciones
       } catch (error) {
         console.error(
           "Error al obtener las publicaciones:",
           error.response || error.message
         );
+        setMisPublicaciones([]); // Establece un array vacío en caso de error
       }
     };
 
