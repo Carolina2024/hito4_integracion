@@ -12,13 +12,14 @@ const app = express();
 const usersRoutes = require("./routes/usersRoutes");
 
 // Configuración de CORS para permitir solicitudes con credenciales
-const corsOptions = {
+/* const corsOptions = {
   origin: "https://hito4-integracion-backend.onrender.com/",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
   exposedHeaders: ["Authorization"],
 };
-
+ */
+app.use(cors()); // Habilitar CORS para todos los orígenes
 app.use(cors(corsOptions)); // se permite cors para todas las rutas
 /* parsear el cuerpo de la consulta */
 app.use(express.json());
