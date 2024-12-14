@@ -11,8 +11,8 @@ export default defineConfig({
   server: {
     proxy: {
       /* "/api": "http://localhost:3000",  */ // Proxy para evitar problemas de CORS para render
-      "/api": "https://hito4-integracion-backend.onrender.com",
-      /* "/api": "http://localhost:3000", */ // Proxy para evitar problemas de CORS
+     /*  "/api": "https://hito4-integracion-backend.onrender.com", */
+      "/api": "http://localhost:3000", // Proxy para evitar problemas de CORS
     },
   },
 });
