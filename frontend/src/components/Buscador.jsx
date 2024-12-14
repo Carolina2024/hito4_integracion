@@ -25,7 +25,7 @@ const Buscador = () => {
         await fetchAllPublicaciones(); // Obtener todas las publicaciones si no hay término
       } else {
         const response = await axios.get(
-          `${import.meta.env.VITE_BASE_URL}/publicaciones/buscar`,
+          `${import.meta.env.VITE_BASE_URL}/api/publicaciones/buscar`,
           { params: { titulo: searchTerm } }
         );
         setPublicaciones(response.data);

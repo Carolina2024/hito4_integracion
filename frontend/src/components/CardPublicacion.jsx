@@ -70,7 +70,7 @@ const CardPublicacion = ({
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BASE_URL}/favoritos/${publicacion_id}`,
+        `${import.meta.env.VITE_BASE_URL}/api/favoritos/${publicacion_id}`,
         {},
         {
           headers: {
