@@ -20,7 +20,7 @@ const usersRoutes = require("./routes/usersRoutes");
 };
  */
 app.use(cors()); // Habilitar CORS para todos los orígenes
-app.use(cors(corsOptions)); // se permite cors para todas las rutas
+/* app.use(cors(corsOptions)); */ // se permite cors para todas las rutas
 /* parsear el cuerpo de la consulta */
 app.use(express.json());
 app.use("/publicaciones", usersRoutes);
