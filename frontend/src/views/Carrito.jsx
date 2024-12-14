@@ -25,7 +25,7 @@ const Carrito = () => {
         }
 
         const response = await fetch(
-          `${import.meta.env.VITE_BASE_URL}/obtenerBoletaItems`,
+          "https://hito4-integracion-backend.onrender.com/obtenerBoletaItems",
           {
             method: "GET",
             headers: {
@@ -57,7 +57,7 @@ const Carrito = () => {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        `${import.meta.env.VITE_BASE_URL}/actualizarCantidad/${item_id}`,
+        "https://hito4-integracion-backend.onrender.com/actualizarCantidad/${item_id}",
         {
           method: "PUT",
           headers: {
@@ -89,7 +89,7 @@ const Carrito = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        `${import.meta.env.VITE_BASE_URL}/eliminarItem/${item_id}`,
+        "https://hito4-integracion-backend.onrender.com/eliminarItem/${item_id}",
         {
           method: "DELETE",
           headers: {

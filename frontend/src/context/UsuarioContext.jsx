@@ -23,7 +23,7 @@ const UsuariosProvider = ({ children }) => {
   const fetchPublicaciones = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_BASE_URL}/publicaciones/ordenar`,
+        "https://hito4-integracion-backend.onrender.com/publicaciones/ordenar",
         {
           params: { sort: sortOption }, // Pasar la opción de orden como parámetro
         }
@@ -75,7 +75,7 @@ const UsuariosProvider = ({ children }) => {
 
       //peticion GET a /usuarios en Authorization Bearer
       const userResponse = await axios.get(
-        `${import.meta.env.VITE_BASE_URL}/usuarios`,
+        "https://hito4-integracion-backend.onrender.com/usuarios",
         {
           headers: { Authorization: `Bearer ${token}` },
         }

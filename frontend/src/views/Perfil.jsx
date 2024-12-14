@@ -33,7 +33,7 @@ const Perfil = () => {
     try {
       //solicitud  get a usuarios, la variable data contiene el arreglo con los datos de los usuarios
       const { data } = await axios.get(
-        `${import.meta.env.VITE_BASE_URL}/usuarios`,
+        "https://hito4-integracion-backend.onrender.com/usuarios",
         {
           // autorizacion con token
           headers: { Authorization: `Bearer ${token}` },

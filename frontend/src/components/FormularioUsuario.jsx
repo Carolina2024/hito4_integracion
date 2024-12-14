@@ -40,9 +40,8 @@ const FormularioUsuario = () => {
     try {
       // enviar registro al backend en tabla usuarios, POST
       /* const response = await axios.post("http://localhost:3000/usuarios", { */
-      console.log("vite_base", import.meta.env.VITE_BASE_URL);
         const response = await axios.post(
-          `${import.meta.env.VITE_BASE_URL}/usuarios`,
+          "https://hito4-integracion-backend.onrender.com/usuarios",
           {
             nombre,
             email,

@@ -29,7 +29,7 @@ const MisFavoritos = () => {
 
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_BASE_URL}/favoritos`,
+          "https://hito4-integracion-backend.onrender.com/favoritos",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,

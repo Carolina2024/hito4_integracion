@@ -15,8 +15,6 @@ const ActualizarPerfil = () => {
   const [confirmar, setConfirmar] = useState("");
   const navigate = useNavigate();
 
-  const BASE_URL = import.meta.env.VITE_BASE_URL;
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -58,7 +56,7 @@ const ActualizarPerfil = () => {
     try {
       // Enviar la solicitud PUT para actualizar los datos del usuario
       const response = await axios.put(
-        `${import.meta.env.VITE_BASE_URL}/usuarios`, // Actualiza la URL si es necesario
+        "https://hito4-integracion-backend.onrender.com/usuarios", // Actualiza la URL si es necesario
         updatedUserData,
         {
           headers: {

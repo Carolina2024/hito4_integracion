@@ -37,7 +37,7 @@ const CrearPublicacion = () => {
       console.log("Enviando la solicitud a la API");
       // Hacer la solicitud POST al backend, enviando el token en los headers
       const response = await axios.post(
-        `${import.meta.env.VITE_BASE_URL}/publicaciones`,
+        "https://hito4-integracion-backend.onrender.com/publicaciones",
         nuevaPublicacion,
         {
           headers: {
