@@ -13,7 +13,7 @@ const usersRoutes = require("./routes/usersRoutes");
 
 // Configuración de CORS para permitir solicitudes con credenciales
 const corsOptions = {
-  origin: ["https://hito4-integracion-frontend.onrender.com", "https://hito4-integracion-backend.onrender.com"],
+  origin: "https://hito4-integracion-frontend.onrender.com",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
   exposedHeaders: ["Authorization"],
