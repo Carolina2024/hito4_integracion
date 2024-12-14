@@ -28,12 +28,14 @@ const MisFavoritos = () => {
       }
 
       try {
-        const response = await axios.get(`${BASE_URL}/favoritos`,
+        const response = await axios.get(
+          `${import.meta.env.VITE_BASE_URL}/favoritos`,
           {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        });
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
         setMisFavoritos(response.data);
       } catch (error) {
         console.error("Error fetching favorites", error);

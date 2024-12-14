@@ -42,7 +42,7 @@ const FormularioUsuario = () => {
       /* const response = await axios.post("http://localhost:3000/usuarios", { */
       console.log("vite_base", import.meta.env.VITE_BASE_URL);
         const response = await axios.post(
-          `${BASE_URL}/usuarios`,
+          `${import.meta.env.VITE_BASE_URL}/usuarios`,
           {
             nombre,
             email,

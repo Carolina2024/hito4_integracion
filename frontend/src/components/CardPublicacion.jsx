@@ -33,7 +33,7 @@ const CardPublicacion = ({
 
     try {
       const response = await axios.post(
-        `${BASE_URL}/boletas/agregar/${publicacion_id}`,
+        `${import.meta.env.VITE_BASE_URL}/boletas/agregar/${publicacion_id}`,
         {}, // No es necesario enviar datos en el cuerpo
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -72,7 +72,7 @@ const CardPublicacion = ({
 
     try {
       const response = await axios.post(
-        `${BASE_URL}/favoritos/${publicacion_id}`,
+        `${import.meta.env.VITE_BASE_URL}/favoritos/${publicacion_id}`,
         {},
         {
           headers: {

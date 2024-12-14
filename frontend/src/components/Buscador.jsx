@@ -13,7 +13,7 @@ const Buscador = () => {
   const fetchAllPublicaciones = async () => {
     try {
       const response = await axios.get(
-        `${BASE_URL}/publicaciones/buscar`
+        `${import.meta.env.VITE_BASE_URL}/publicaciones/buscar`
       );
       setPublicaciones(response.data);
     } catch (error) {
@@ -27,7 +27,7 @@ const Buscador = () => {
         await fetchAllPublicaciones(); // Obtener todas las publicaciones si no hay término
       } else {
         const response = await axios.get(
-          `${BASE_URL}/publicaciones/buscar`,
+          `${import.meta.env.VITE_BASE_URL}/publicaciones/buscar`,
           { params: { titulo: searchTerm } }
         );
         setPublicaciones(response.data);

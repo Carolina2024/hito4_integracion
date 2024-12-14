@@ -32,10 +32,13 @@ const Perfil = () => {
     //se ingresa al perfil despues del inicio de sesion con credenciales y autorizacion con token para backend
     try {
       //solicitud  get a usuarios, la variable data contiene el arreglo con los datos de los usuarios
-      const { data } = await axios.get(`${BASE_URL}/usuarios`, {
-        // autorizacion con token
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const { data } = await axios.get(
+        `${import.meta.env.VITE_BASE_URL}/usuarios`,
+        {
+          // autorizacion con token
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       console.log(data);
       setUsuario(data[0]);  // Almacena los datos del usuario obtenido de la bd, se guarda primer elemento que es el nombre
 
