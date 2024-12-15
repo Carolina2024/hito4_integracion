@@ -8,7 +8,7 @@ export const UsuarioContext = createContext();
 const initialUsuario = JSON.parse(localStorage.getItem("usuario")) || null;
 
 const UsuariosProvider = ({ children }) => {
-  const [token, setToken] = useState(localStorage.getItem("token") || null); //para backend
+  const [token, setToken] = useState(sessionStorage.getItem("token") || null); //para backend
   const [activeMenu, setActiveMenu] = useState("");
   const [showCerrarSesion, setShowCerrarSesion] = useState(false);
   const [usuario, setUsuario] = useState(initialUsuario); //initialUsuario es el valor del estado inicial del estado usuario
@@ -42,7 +42,7 @@ const UsuariosProvider = ({ children }) => {
     setShowCerrarSesion(false); // Cambiar el estado de visibilidad del menú de cierre
     sessionStorage.removeItem("token"); // Eliminar el token de sessionStorage
     localStorage.removeItem("usuario"); // eliminar usuario de localStorage
-    localStorage.removeItem("token"); //Eliminar el token de localStorage
+    /* localStorage.removeItem("token"); */ //Eliminar el token de localStorage
   };
 
   const handleMenuChange = (menuName) => {
@@ -68,7 +68,7 @@ const UsuariosProvider = ({ children }) => {
       // se almacena el token si la respuesta es exitosa en el login
       const { token } = response.data;
       console.log("Token recibido:", token);
-      localStorage.setItem("token", token);
+      sessionStorage.setItem("token", token);
       setToken(token);
 
       //peticion GET a /usuarios en Authorization Bearer
