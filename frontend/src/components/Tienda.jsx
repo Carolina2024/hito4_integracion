@@ -68,7 +68,12 @@ const Tienda = () => {
               <Row className="justify-content-start align-item-start">
                 {publicaciones.length > 0 ? (
                   publicaciones.map((publicacion, index) => (
-                    <Col xs={12} md={6} lg={6} key={publicacion.publicacion_id}>
+                    <Col
+                      xs={12}
+                      md={6}
+                      lg={6}
+                      key={publicacion.publicacion_id || index}
+                    >
                       <CardPublicacion
                         publicacion_id={publicacion.publicacion_id} //se pasa publicacion_id
                         imagen={publicacion.imagen_url}
@@ -98,10 +103,15 @@ const Tienda = () => {
         <Row>
           <Col xs={12}>
             <h3 className="text-center mb-2 mt-2 mb-4">Tienda de Cursos</h3>
-            </Col>
-            {publicaciones.length > 0 ? (
+          </Col>
+          {publicaciones.length > 0 ? (
             publicaciones.map((publicacion, index) => (
-              <Col xs={12} md={6} lg={4} key={publicacion.publicacion_id}>
+              <Col
+                xs={12}
+                md={6}
+                lg={4}
+                key={publicacion.publicacion_id || index}
+              >
                 <CardPublicacion
                   publicacion_id={publicacion.publicacion_id}
                   imagen={publicacion.imagen_url}
