@@ -13,23 +13,24 @@ const Tienda = () => {
   console.log("Publicaciones:", publicaciones);
 
   // Función para obtener publicaciones desde el backend
-  const fetchPublicaciones = async () => {
-    try {
-      const response = await axios.get(
-        /*  `${import.meta.env.VITE_BASE_URL}/publicaciones` */
-        "https://hito4-integracion.onrender.com/publicaciones"
-      );
-      /*  console.log("Password:", pgpassword); */
-      setPublicaciones(response.data || []); // Actualiza el estado con las publicaciones obtenidas
-      /* console.log("publicaciones: ", response.data); */
-    } catch (error) {
-      console.error("Error al obtener las publicaciones en Tienda:", error);
-      setPublicaciones([]); // Establece un array vacío en caso de error
-    }
-  };
-
-  // Llamada a fetchPublicaciones al montar el componente
   useEffect(() => {
+    const fetchPublicaciones = async () => {
+      try {
+        const response = await axios.get(
+          /*  `${import.meta.env.VITE_BASE_URL}/publicaciones` */
+          "https://hito4-integracion.onrender.com/publicaciones"
+        );
+        /*  console.log("Password:", pgpassword); */
+        setPublicaciones(response.data || []); // Actualiza el estado con las publicaciones obtenidas
+        /* console.log("publicaciones: ", response.data); */
+      } catch (error) {
+        console.error("Error al obtener las publicaciones en Tienda:", error);
+        setPublicaciones([]); // Establece un array vacío en caso de error
+      }
+    };
+
+    // Llamada a fetchPublicaciones al montar el componente
+
     fetchPublicaciones(); // Llama la API para obtener las publicaciones
   }, []);
 
@@ -97,8 +98,8 @@ const Tienda = () => {
         <Row>
           <Col xs={12}>
             <h3 className="text-center mb-2 mt-2 mb-4">Tienda de Cursos</h3>
-          </Col>
-          {publicaciones.length > 0 ? (
+            </Col>
+            {publicaciones.length > 0 ? (
             publicaciones.map((publicacion) => (
               <Col xs={12} md={6} lg={4} key={publicacion.publicacion_id}>
                 <CardPublicacion
