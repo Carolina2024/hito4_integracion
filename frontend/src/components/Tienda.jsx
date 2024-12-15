@@ -11,6 +11,7 @@ const Tienda = () => {
   const { publicaciones, setPublicaciones } = useContext(UsuarioContext);
   const { activeMenu, usuario } = useContext(UsuarioContext); // para traer usuario de context
   console.log("Publicaciones:", publicaciones);
+
   // Función para obtener publicaciones desde el backend
   const fetchPublicaciones = async () => {
     try {
@@ -18,7 +19,7 @@ const Tienda = () => {
         /*  `${import.meta.env.VITE_BASE_URL}/publicaciones` */
         "https://hito4-integracion.onrender.com/publicaciones"
       );
-     /*  console.log("Password:", pgpassword); */
+      /*  console.log("Password:", pgpassword); */
       setPublicaciones(response.data || []); // Actualiza el estado con las publicaciones obtenidas
       /* console.log("publicaciones: ", response.data); */
     } catch (error) {
@@ -62,21 +63,29 @@ const Tienda = () => {
                 </Col>
               </Row>
               <Row className="justify-content-start align-item-start">
-                {publicaciones.map((publicacion) => (
-                  <Col xs={12} md={6} lg={6} key={publicacion.publicacion_id}>
-                    <CardPublicacion
-                      publicacion_id={publicacion.publicacion_id} //se pasa publicacion_id
-                      imagen={publicacion.imagen_url}
-                      titulo={publicacion.titulo}
-                      descripcion={publicacion.descripcion}
-                      precio={publicacion.precio}
-                      publicador={
-                        publicacion.nombre_usuario
-                      } /* se pasa el nombre del publicador */
-                      mostrarAgregar={true}
-                    />
+                {publicaciones.length > 0 ? (
+                  publicaciones.map((publicacion) => (
+                    <Col xs={12} md={6} lg={6} key={publicacion.publicacion_id}>
+                      <CardPublicacion
+                        publicacion_id={publicacion.publicacion_id} //se pasa publicacion_id
+                        imagen={publicacion.imagen_url}
+                        titulo={publicacion.titulo}
+                        descripcion={publicacion.descripcion}
+                        precio={publicacion.precio}
+                        publicador={
+                          publicacion.nombre_usuario
+                        } /* se pasa el nombre del publicador */
+                        mostrarAgregar={true}
+                      />
+                    </Col>
+                  ))
+                ) : (
+                  <Col xs={12}>
+                    <p className="text-center">
+                      No hay publicaciones disponibles.
+                    </p>
                   </Col>
-                ))}
+                )}
               </Row>
             </Col>
           </Row>
@@ -87,19 +96,25 @@ const Tienda = () => {
           <Col xs={12}>
             <h3 className="text-center mb-2 mt-2 mb-4">Tienda de Cursos</h3>
           </Col>
-          {publicaciones.map((publicacion) => (
-            <Col xs={12} md={6} lg={4} key={publicacion.publicacion_id}>
-              <CardPublicacion
-                publicacion_id={publicacion.publicacion_id}
-                imagen={publicacion.imagen_url}
-                titulo={publicacion.titulo}
-                descripcion={publicacion.descripcion}
-                precio={publicacion.precio}
-                publicador={publicacion.nombre_usuario}
-                mostrarAgregar={true}
-              />
+          {publicaciones.length > 0 ? (
+            publicaciones.map((publicacion) => (
+              <Col xs={12} md={6} lg={4} key={publicacion.publicacion_id}>
+                <CardPublicacion
+                  publicacion_id={publicacion.publicacion_id}
+                  imagen={publicacion.imagen_url}
+                  titulo={publicacion.titulo}
+                  descripcion={publicacion.descripcion}
+                  precio={publicacion.precio}
+                  publicador={publicacion.nombre_usuario}
+                  mostrarAgregar={true}
+                />
+              </Col>
+            ))
+          ) : (
+            <Col xs={12}>
+              <p className="text-center">No hay publicaciones disponibles.</p>
             </Col>
-          ))}
+          )}
         </Row>
       )}
     </Container>
