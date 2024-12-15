@@ -26,9 +26,14 @@ const UsuariosProvider = ({ children }) => {
           params: { sort: sortOption }, // Pasar la opción de orden como parámetro
         }
       );
-      setPublicaciones(response.data);
+      if (Array.isArray(response.data)) {
+        setPublicaciones(response.data);
+      } else {
+        setPublicaciones([]); // Si la respuesta no es un array, establecerlo como un array vacío
+      }
     } catch (error) {
       console.error("Error al obtener publicaciones:", error);
+      setPublicaciones([]); // Manejar el error y establecer un array vacío
     }
   };
 
