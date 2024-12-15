@@ -55,7 +55,7 @@ const Carrito = () => {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        "https://hito4-integracion.onrender.com/actualizarCantidad/${item_id}",
+        `https://hito4-integracion.onrender.com/actualizarCantidad/${item_id}`,
         {
           method: "PUT",
           headers: {
@@ -87,7 +87,7 @@ const Carrito = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        "https://hito4-integracion.onrender.com/eliminarItem/${item_id}",
+        `https://hito4-integracion.onrender.com/eliminarItem/${item_id}`,
         {
           method: "DELETE",
           headers: {
