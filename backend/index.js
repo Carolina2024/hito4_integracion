@@ -31,10 +31,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 
 //para ocupar .env
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server listening on port http://localhost:${PORT}`);
-});
 
 // Resto de tus rutas
 app.use("/api", usersRoutes);
@@ -58,5 +54,11 @@ app.use(express.static("public")); // Servir archivos estáticos desde 'public'
 app.get("*", (req, res) => {
   res.sendFile(__dirname + "/public/index.html"); // Redirigir todas las rutas al frontend
 });
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server listening on port http://localhost:${PORT}`);
+});
+
 
 module.exports = app; // Exportamos app para los test
