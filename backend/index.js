@@ -40,9 +40,14 @@ app.listen(PORT, () => {
 app.use("/api", usersRoutes);
 
 // Manejar cualquier otra ruta con el frontend
-app.get("*", (req, res) => {
+/* app.get("*", (req, res) => {
   console.log("__dirname:", __dirname); // Aquí para verificar el valor
   res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+ */
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "public", "index.html"));
 });
 
 app.get("/api", (req, res) => {
