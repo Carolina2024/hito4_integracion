@@ -33,6 +33,8 @@ const Tienda = () => {
     fetchPublicaciones(); // Llama la API para obtener las publicaciones
   }, []);
 
+  console.log("Publicaciones:", publicaciones); // Verificar el contenido
+
   return (
     <Container fluid className="py-4">
       {/* elementos visibles en vista privada de la tienda desde perfil */}
