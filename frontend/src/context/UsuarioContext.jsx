@@ -17,27 +17,27 @@ const UsuariosProvider = ({ children }) => {
   const [MisFavoritos, setMisFavoritos] = useState([]);
   const [sortOption, setSortOption] = useState(""); // Opción de ordenación seleccionada
 
-  // Función para obtener publicaciones con orden
-  const fetchPublicaciones = async () => {
-    try {
-      const response = await axios.get(
-        "https://hito4-integracion.onrender.com/publicaciones/ordenar",
-        {
-          params: { sort: sortOption }, // Pasar la opción de orden como parámetro
-        }
-      );
-      if (Array.isArray(response.data)) {
-        setPublicaciones(response.data);
-      } else {
-        setPublicaciones([]); // Si la respuesta no es un array, establecerlo como un array vacío
-      }
-    } catch (error) {
-      console.error("Error al obtener publicaciones:", error);
-      setPublicaciones([]); // Manejar el error y establecer un array vacío
-    }
-  };
-
   useEffect(() => {
+    // Función para obtener publicaciones con orden
+    const fetchPublicaciones = async () => {
+      try {
+        const response = await axios.get(
+          "https://hito4-integracion.onrender.com/publicaciones/ordenar",
+          {
+            params: { sort: sortOption }, // Pasar la opción de orden como parámetro
+          }
+        );
+        if (Array.isArray(response.data)) {
+          setPublicaciones(response.data);
+        } else {
+          setPublicaciones([]); // Si la respuesta no es un array, establecerlo como un array vacío
+        }
+      } catch (error) {
+        console.error("Error al obtener publicaciones:", error);
+        setPublicaciones([]); // Manejar el error y establecer un array vacío
+      }
+    };
+
     fetchPublicaciones(); // Llamar la API cada vez que cambie la opción de orden
   }, [sortOption]);
 
