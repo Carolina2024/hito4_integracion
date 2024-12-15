@@ -19,7 +19,7 @@ const usersRoutes = require("./routes/usersRoutes");
   exposedHeaders: ["Authorization"],
 }; */
 
-app.use(cors({ origin: "https://hito4-integracion-frontend.onrender.com" }));
+app.use(cors({ origin: "https://hito4-integracion-frontend.onrender.com" })); // se agrega para el frontend
 
 app.use(cors()); // Habilitar CORS para todos los orígenes
 /* app.use(cors(corsOptions)); */ // se permite cors para todas las rutas
