@@ -21,4 +21,3 @@ La entrega de este hito será el link en producción de la aplicación cliente.
 4. Integrar la aplicación cliente con la aplicación backend en producción.
 
 
-# hito4_integracion
